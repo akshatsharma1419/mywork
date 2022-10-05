@@ -1,0 +1,75 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2638
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;\red253\green139\blue9;\red0\green0\blue0;\red253\green139\blue9;
+\red0\green0\blue0;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c100000\c61456\c0;\cssrgb\c0\c1\c1;\cssrgb\c100000\c61456\c0;
+\cssrgb\c0\c1\c1;\cssrgb\c0\c0\c0;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww13820\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs28 \cf2 Adding Elements-\
+
+\fs24 \cf3 element.append(<element> || string)    \'97> Can be used to append html node, strings\
+element.appendChild(<element>)  \'97> Can be used to append only node.\
+\
+
+\fs28 \cf4 Creating element-
+\fs24 \cf3 \
+document.createElement(\'93<element type>\'94);  \'97-> div, p\
+\
+
+\fs28 \cf4 Adding Text to element-
+\fs24 \cf3 \
+element.innerText();    \'97-> \cf5 Incase of viewing, it only displays the text visible.\cf3 \
+element.textContent();  \'97> \cf5 Incase of viewing, it displays all the text with indentation, hidden text as well.\cf3 \
+element.innerHTML(`<div>Hello</div>`);\
+\
+
+\fs28 \cf4 To delete an element-
+\fs24 \cf3 \
+element.remove();\
+element.removeChild(<child-element>);\
+\
+
+\fs28 \cf4 Getting / Updating or Adding / Modifying properties of an element-\
+
+\fs24 \cf3 element.getAttribute(\'93id\'94);  OR   \cf5 element.id      \'97> Used to get attribute value\
+element.setAttribute(\'93id\'94, \'93name\'94);  OR   element.id  = \'93name\'94;   \'97> Used to set attribute value\
+element.removeAttribute()   \'97> \'97> Used to remove attribute.\
+\
+Passing data from HTML\
+<div data-test=\'93test data\'94></div>    \'97-> Inside HTML\
+console.log(element.dataset.test);                       \'97-> Inside JS to get data\
+\
+element.classList.add();         \'97> Add a class to element\
+element.classList.remove();   \'97> Remove a class from element\
+\
+element.style.backgroundColor =\'93red\'94;   \'97> Updating styles\
+\
+\
+
+\fs28 \cf2 Traversing DOM ways-\
+
+\fs24 \cf6 document.getElementById(\'91name\'92);\
+document.getElementsByClassName(\'91name\'92);       \'97-> returns node, so needs to be converted to array to iterate.\
+document.querySelector();                                      \'97-> Select first element with name\
+document.querySelectorAll();                                   \'97> Select all elements\
+\
+Selecting children from parent-\
+<element>.children;           \'97-> Selecting all children inside a parent\
+<element>.children[0];        \'97-> Can be used like an array. Here first element from children is selected\
+\
+Selecting parent from child-\
+<child-element>.parentElement;\
+<child-element>.closest(\'93.parentClassName\'94);      \'97\'97> Closest works opposite direction as querySelector. Travels upwards. Finds nearest closest parent element from child.\
+\
+Selecting Sibling/ Side-Side-\
+<element>.nextElementSibling;    \'97\'97> Selecting next sibling\
+<element>.previousElementSibling;     \'97\'97> Selecting previous sibling\
+\
+\
+\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf5 \
+}

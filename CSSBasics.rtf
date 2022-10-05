@@ -1,0 +1,412 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2638
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Verdana;\f2\fnil\fcharset0 Verdana-Bold;
+\f3\fnil\fcharset0 Menlo-Regular;\f4\fnil\fcharset0 HelveticaNeue-Bold;\f5\fnil\fcharset0 HelveticaNeue;
+\f6\fswiss\fcharset0 Helvetica-Bold;}
+{\colortbl;\red255\green255\blue255;\red251\green0\blue7;\red255\green255\blue255;\red0\green0\blue0;
+\red0\green0\blue0;\red211\green83\blue92;\red23\green23\blue23;\red202\green202\blue202;\red79\green123\blue61;
+\red238\green46\blue56;\red253\green139\blue9;\red255\green255\blue11;\red220\green161\blue13;\red146\green26\blue32;
+\red251\green0\blue7;\red0\green0\blue194;}
+{\*\expandedcolortbl;;\cssrgb\c100000\c12195\c0;\cssrgb\c100000\c100000\c100000;\cssrgb\c0\c1\c1;
+\cssrgb\c0\c0\c0;\cssrgb\c86667\c41569\c43529;\cssrgb\c11765\c11765\c11765;\cssrgb\c83137\c83137\c83137;\cssrgb\c37647\c54510\c30588;
+\cssrgb\c95686\c27843\c27843;\cssrgb\c100000\c61456\c0;\cssrgb\c100000\c100000\c0;\cssrgb\c89412\c68627\c3922;\cssrgb\c64706\c16471\c16471;
+\cssrgb\c100000\c0\c0;\cssrgb\c0\c0\c80392;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid101\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid2}
+{\list\listtemplateid3\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid201\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid3}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}{\listoverride\listid3\listoverridecount0\ls3}}
+\paperw11900\paperh16840\margl1440\margr1440\vieww17740\viewh15720\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs28 \cf2 Combining Selectors-\
+\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls1\ilvl0
+\f1\fs30 \cf0 \cb3 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+descendant selector (space)\cb1 \
+\ls1\ilvl0\cb3 \kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+child selector (>)\cb1 \
+\ls1\ilvl0\cb3 \kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+adjacent sibling selector (+)\cb1 \
+\ls1\ilvl0\cb3 \kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+general sibling selector (~)
+\f0\fs24 \cb1 \kerning1\expnd0\expndtw0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+Applying similar CSS to multiple elements :\
+h1, h2, h3\{\
+   color:blue;\
+\}\
+\
+\cf4 Applying CSS to descendant element:\cf0 \
+div p\{\
+   background-colour: red;\
+\}\
+// Style will be applied to p inside div.\
+\
+Applying CSS to all child of selected element\
+div > p\{\
+   background-colour:yellow;\
+\}\
+// Style will be applied to all p which are child of div\
+\
+Applying style to first sibling of selected element\
+div + p\{\
+   background-colour:yellow;\
+\}\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls2\ilvl0\cf0 \
+Select all sibling of selected element\
+div ~ p \{\
+   background-colour:green;\
+\}\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\fs28 \cf2 Pseudo class-\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\fs24 \cf5 div:first-child\{\
+   background-colour:orange;\
+\}\
+\
+div:last-child\{\
+   background-colour:orange;\
+\}\
+\
+div:nth-child(odd)\{\
+   background-colour:orange;\
+\}\
+\
+div:nth-child(even)\{\
+   background-colour:orange;\
+\}\
+\
+div:nth-child(2)\{\
+   background-colour:orange;\
+\}\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+// Child Seudo works in combined selector only if the child is the first/last child of the element.\
+\
+Pseudo class on anchor:\
+link, visited, hover, active\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\fs28 \cf2 Specificity-\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\fs24 \cf4 When there are multiple styles applied to element one having highest priority is applied.\cf0 \
+\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls3\ilvl0
+\f2\b\fs30 \cf0 \cb3 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+Inline styles
+\f1\b0  - Example: <h1 style="color: pink;">\cb1 \
+\ls3\ilvl0
+\f2\b \cb3 \kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+IDs
+\f1\b0  - Example: #navbar\cb1 \
+\ls3\ilvl0
+\f2\b \cb3 \kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+Classes, pseudo-classes, attribute selectors
+\f1\b0  - Example: .test, :hover, [href]\cb1 \
+\ls3\ilvl0
+\f2\b \cb3 \kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+Elements and pseudo-elements
+\f1\b0  - Example: h1, :before\
+\pard\tx566\pardeftab720\partightenfactor0
+
+\f0\fs24 \cf0 \cb1 \kerning1\expnd0\expndtw0 \
+
+\fs28 \cf2 Inheritance & Universal Selectors-\
+
+\fs24 \cf0 Styles and properties get inherited from parent. Inherited styles have the lowest priority\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\fs28 \cf2 Box Model- \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\fs24 \cf5 Margin->Border->Padding-Content\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\fs28 \cf2 Types of Boxes-\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\fs24 \cf4 Block- Elements that occupy the entire row.\
+Inline- Elements that occupy only the space they need, height and width do not apply, paddings and margins          are applied only horizontally(left and right).\
+Inline-block : It does look like inline, but when height, width, padding and margins are applied it works like block.
+\fs28 \cf2 \
+\
+Pseudo elements- \
+\pard\pardeftab720\sa360\partightenfactor0
+
+\f1\fs30 \cf0 \cb3 \expnd0\expndtw0\kerning0
+A CSS pseudo-element is used to style specified parts of an element.
+\f0\fs24 \cb1 \kerning1\expnd0\expndtw0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 first-line\
+first-letter\
+after- content should be used to apply this method\
+before- content should be used to apply this method\
+selection\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\fs28 \cf2 Positioning elements-\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\fs24 \cf4 Position property helps us positioning using top, right left, down method.\
+\
+Static- Is by default set as position.\
+Relative- Element is positioned relative to its normal position, but will remain in the flow.\
+Absolute- Element will be positioned based on nearest relative parent element.\
+Fixed- Element will remain fixed to its particular position\
+Z-Index-
+\fs28 \cf2 \
+\
+Ways to Center the Page-\
+\
+
+\fs24 \cf4 // Should be inside a div\
+.container\{\
+  width:70%;\
+   margin: 0 auto;\
+\}
+\fs28 \cf2 \
+\
+On Child div\
+position:absolute;\
+\pard\pardeftab720\partightenfactor0
+
+\f3\fs24 \cf6 \cb7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 top\cf8 \strokec8 :\cf9 \strokec9 50%\cf8 \strokec8 ;\cb1 \
+\cb7   \cf6 \strokec6 left\cf8 \strokec8 :\cf9 \strokec9 50%\cf8 \strokec8 ;\cb1 \
+\cb7   \cf6 \strokec6 transform\cf8 \strokec8 : \cf10 \strokec10 translate\cf8 \strokec8 (\cf9 \strokec9 -50%\cf8 \strokec8 ,\cf9 \strokec9 -50%\cf8 \strokec8 );\cb1 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs28 \cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+Layouts-\
+\
+Floats\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\fs24 \cf4 left, right.\
+clear- both, left, right
+\fs28 \cf2 \
+
+\fs24 \cf4 // In order to clear float ::after pseudo element can also be used.\
+\
+https://codepen.io/akshat1419/pen/XWEbrGp
+\fs28 \cf2 \
+\
+Flexbox\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\fs24 \cf11 Container-
+\fs28 \cf2 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\fs24 \cf4 display:flex is applied to the container 
+\fs28 \cf2 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\fs26 \cf12 By default flex direction is row\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\fs24 \cf4   Main axis- Horizontal\
+     Justify-content works on main axis. It is stretch by default. (space-between, space-around, center, flex-start, flex-end)\
+  Cross axis- Vertical\
+      Align-items work on cross-axis. (start, end, center)\
+\
+display:flex is applied to the container
+\fs28 \cf2 \
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\fs26 \cf12 When set flex direction to column\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\fs24 \cf4 Main axis- Vertical\
+     Justify-content works on main axis. It is stretch by default. (space-between, space-around, center, flex-start, flex-end)
+\fs26 \cf12 \
+
+\fs24 \cf4   Cross axis- Horizontal\
+     Align-items work on cross-axis. (start, end, center)\
+     \
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf12 To set Gap between items\cf4 \
+gap:value;  \
+\
+\cf12 Wrap:\cf4 \
+flex-wrap: nowrap | wrap | wrap-reverse \
+flex-direction: row | row-reverse | column | column-reverse
+\fs28 \cf2 \
+\
+
+\fs24 \cf12 Align-content:
+\fs28 \cf2 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\fs24 \cf4 Align-content: stretch | flex-start | flex-end | center | space-between | space-around
+\fs28 \cf2 \
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf11 Items-\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\fs24 \cf12 flex-grow: value\
+flex-shrink: value\
+flex-basis: auto | length (define width of an item)\
+flex: (ShortHand to define all 3 properties in one line) Default value\'97\'97> 0,1auto
+\fs28 \cf11 \
+
+\fs24 \cf12 align-self: auto | stretch | flex-start | flex-end | center | baseline\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\fs28 \cf11              To override align-items for individual flex item.\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf2 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\fs24 \cf4 https://codepen.io/akshat1419/pen/gOepYyZ
+\fs28 \cf2 \
+\
+Grid\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\fs24 \cf12 Grid container-
+\fs28 \cf2 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\fs24 \cf4 grid-template-columns : px | fr | repeat(4, 1fr)
+\fs28 \cf2 \
+
+\fs24 \cf4 grid-template-rows\
+column-gap\
+row-gap\
+gap\
+Aligning items inside container use:\
+    justify-content: start | center | end\
+    align-content: start | center | end\
+Aligning items inside cells:\
+    justify-items: start | center | end   \'97> Used for horizontal space.\
+    align-items: start | center | end     \'97> Used for vertical space.\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf12 Grid items-\
+grid-column: <start-line> / <end-line> | span <number>\cf4 \
+grid-row: \cf12 <start-line> / <end-line> | span <number>\cf4 \
+justify-self: stretch | start | center | end      \'97> Used to override default value set in container. \
+align-self: stretch | start | center | end        \'97> Used to override default value set in container. \
+\
+\
+Carousel-\
+https://codepen.io/akshat1419/pen/OJvybPx\
+\
+\
+Inheritance-\
+\
+3 types:\
+Default style by CSS\
+User agent style sheet\
+Custom styles\
+\
+border- does not inherit by default\
+font-size- inherits by default\
+\
+To inherit a property that is not inherited by default- border:inherit;\
+\
+initial\
+unset- \
+revert- Gets reverted to the style defined in user agent style sheet\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f4\b\fs26 \cf13 CSS Animation:\
+\
+Transform:\
+\
+transform: rotate(90deg)   \'97> Used to rotate\
+transform: scale(1.2,1,5)    \'97> Used to increase the size in particular direction\
+transform: translate(10%,20%)  \'97> Used to move the item to specified direction X or Y\
+transform: skew(10%)  \'97> Is used to rotate the entire box\
+\
+Transition is applied to the root element rather than pseudo class(like hover)\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f5\b0 \cf0 transition: <all | property> duration <linear | ease-in | ease-in-out | cubic-bezier()> delay
+\f4\b \cf13 \
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f6\fs24 \cf0 Animation is applied to the pseudo class styles (like hover)\
+\
+animation: <keyframes key> duration 
+\f5\b0\fs26 <linear | ease-in | ease-in-out | cubic-bezier()> <forwards| backwards> times;\
+      forwards means keep all the property after animation at 100%\
+      backwards means to keep all property after animation at 0%\
+      times is how many times we want animation to repeat
+\f6\b\fs24 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\b0 \cf4 \
+@keyframes key\{\
+    0%\{\}\
+   100%\{\}\
+\} \
+\
+Transform can be used inside keyframes in percentages to apply animation\
+\
+Incase animation is infinite, we can use to stop or run.\
+animation-play-state: running|paused\
+\
+// Using sprite\
+#home\{\
+  background: url(\'91<link to image>\'92) 0 0;\
+\}\
+\
+Overflow\
+auto, visible, hidden, scroll\
+\
+max-width can be used to specify max-width of an element, if the browser size gets small it fits to the screen.\
+\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f3\fs30 \cf14 \cb3 \expnd0\expndtw0\kerning0
+.pagination a.active \{\cf15 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf15 \cb3 \'a0 background-color\cf16 : #4CAF50;\cf15 \cb1 \
+\cb3 \'a0\'a0color\cf16 : white;\cf15 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf14 \cb3 \}\cb1 \
+\
+\cb3 .pagination a:hover:not(.active) \{\cf15 background-color\cf16 : #ddd;\cf14 \}
+\f0\fs24 \cf4 \cb1 \kerning1\expnd0\expndtw0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf4 \
+\
+Rating - {\field{\*\fldinst{HYPERLINK "https://codepen.io/akshat1419/pen/oNqzBWj?editors=1111"}}{\fldrslt 
+\f4\b\fs26 \cf13 https://codepen.io/akshat1419/pen/oNqzBWj?editors=1111}}
+\f4\b\fs26 \cf13 \
+\
+Tic Tak Toe- https://codepen.io/akshat1419/pen/ZExpeQY?editors=1111\
+\
+Flip- https://codepen.io/akshat1419/pen/abYBbgO\
+\
+Clock- https://codepen.io/akshat1419/pen/BarQNbz\
+\
+\
+}

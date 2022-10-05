@@ -1,0 +1,165 @@
+Undirected Graph - edges do not have direction
+Directed Graph - Edges has direction
+
+Undirected/Directed Asylic Graph
+Undirected/Directed Cyclic Graph
+
+Indegree - No of edges in going in a edge
+Outdegree - No of edges going out from a edge
+
+Representation:
+  n represents no of nodes, m is no of edges
+  - Adjency Matrix:
+    
+    function markEdges in matrix(arr){
+      for(let k=0;k<arr.length;k++){
+        let i=arr[k][0];
+        let j=arr[k][1];
+        adj[i][j]=1;
+        adj[j][i]=1;
+      }
+    }
+
+  - Adjency List
+
+  function markEdges(arr){
+    for(let k=0;k<arr.length;k++){
+      let i=arr[k][0];
+      let j=arr[k][1];
+      adj[i].push(j);
+      adj[j].push(i);
+    }
+  }
+
+Conncted/Disconnected Graph
+
+1-3-4-6-8   2-9   5-7-8
+Above one is Disconnected graph
+Graph has multiple components
+
+We will take a visited array to traverse all the components
+Traversal Techniques:
+BFS - Traversing the adjacent nodes at first.
+
+function traverse(arr){
+
+  for(let i=0;i<arr.length;i++){
+    if(!visited[i]){
+      let queue=[];
+      queue.add(i);
+      visited[i]=true;
+      while(q.length>0){
+        let curr=queue.shift();
+        console.log(curr);
+        for(let j in adj[curr]){
+          if(!visited[j]){
+            visited[j]=true;
+            queue.push(j);
+          }
+        }
+      }
+    }
+  }
+}
+
+TC: O(N+E)
+SC: O(N+E)+O(N)+O(N)
+
+
+DFS - Traversing the depth at first
+
+function dfs(i){
+  visited[i]=true;
+  console.log(i);
+  for(let j=0;j<adj[i].length;j++){
+    if(!visited[adj[i][j]]){
+      dfs(j);
+    }
+  }
+}
+
+
+function traverse(adj){
+  for(let i=1;i<adj.length;i++){
+    if(!visited[i]){
+      dfs(i);
+    }
+  }
+}
+
+
+Cycle detection
+Using BFS-
+
+function detectCycle(){
+  for(let i=1;i<adj.length;i++){
+    if(!visited[i]){
+      if(check(i)==true) return true;
+    } 
+  }
+  return false;
+}
+
+function check(i){
+  let queue=[];
+  queue.push(i);
+  while(queue.length>0){
+    let curr=queue.shift();
+    for(let a in adj[curr]){
+      if(i!=a && visited[a]) return true;
+      visited[a]=true;
+      queue.push(a);
+    }
+  }
+  return false;
+}
+
+
+
+Using DFS-
+
+function detectCycle(){
+  for(let i=1;i<adj.length;i++){
+    if(!visited[i]){
+      if(check(i,-1)==true) return true;
+    } 
+  }
+  return false;
+}
+
+// Here we need to carry parent node
+function check(i, parent){
+  visited[i]=true;
+  for(let ch in adj[i]){
+    if(!visited[ch]) if(check(ch, i)) return true;
+    else if(adj[ch]!=parent) return true;
+  }
+  return false;
+}
+
+Bipartite Graphs is graph that can be coloured with exactly two colors, 
+in which two adjacent nodes has same color
+
+If a graph does not have a cycle it is Bipartite.
+If a graph has cycle, and length of cycle is even it is Bipartite
+If a graph has cycle, and length of cycle is odd it is not Bipartite
+
+
+Topological Sort- (Only posible in directed asylic graph)
+Linear ordering of vertices such that if there is an edge between u to v, u appears before v in ordering
+
+Using DFS
+We cna use DFS traversal, once all the visits from a node gets over we put it into a stack.
+
+Using BFS (Using Kahn's Algo)
+Find indegree of all nodes
+Then take a queue and find all nodes having indegree zero, put it in queue.
+Then we pop node and decrese indegree of each node which the popped node directs to.
+
+
+
+
+
+
+
+
