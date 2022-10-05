@@ -1,0 +1,124 @@
+------------------------------------------------------------
+Requirements:
+------------------------------------------------------------
+   - Functional
+     :Supply
+       Admin should be able to upload videos
+       Analytics of views/ reviews on videos
+       Add tags and meta info to videos
+     :Demand
+       Pricing and Subscription
+       Multi user management
+       help and support
+       Authorization
+       Movie series catalog
+       Watch Moview, Watchlist, Add review
+
+      Features:
+        Home page which lists out catalog
+        Multi user management
+        Configurable UI
+        Video player
+        Review
+        Change language
+        Audio subtitles
+        Sign in Signout/ Add new user, switching between users
+        Preview on hovering
+        Controls
+        Quality Control
+        Speed of video
+        Thumbnail over view
+
+   - Non Functional
+     Should be accessible on all devices, responsive
+     Fast streaming
+     Asset Optimization(Video, iamge, CSS) and Performance
+     Resource hinting
+     Accessibility
+     Deep linking-> From browser to Application
+     CSR/Subscription
+     Auth
+     Security
+     HTTP2 for streaming
+     Caching
+     Service workers(Offline support)
+     
+------------------------------------------------------------
+Scoping:
+------------------------------------------------------------
+
+------------------------------------------------------------
+Tech stack:
+------------------------------------------------------------
+Library-
+Architecture-
+Build tools-
+Dependencies-
+   Image blobs/ Sprite/ SVG
+   Video HTML Tags, Media sources(More controls like moving fast, slow, back)
+   HTTP1:
+       A new TCP connection for each request.
+   HTTP2: 
+       Stream/multiplexing in a single TCP connection multiple requests can be managed
+       prioritization of requests
+       push data from server 
+   HTTP3: UDP
+
+   Streaming protocol: (DASH-Dynamic Adaptive Straming over HTTP standard)
+       (Latest)Secure Reliable Transport(SRT) designed for low latency live video transmission
+       HTTP Live Straming(HLS) protoco; for adaptive bitrate streaming
+
+   Popular Video Players:
+      Shaka(Google)
+      Dash.js
+
+------------------------------------------------------------
+Component Design:
+------------------------------------------------------------
+   Skeleton Visualization (Home > Movies > MoviewName)
+   Component Hierarchy
+   Routing
+   Services
+   Data Sharing(Like tools used to maintain state)
+   Configurable UI
+
+------------------------------------------------------------
+Data Api & Implementation:
+------------------------------------------------------------
+   Protocol
+   Implementation Details:
+     pagination/infinte scrolls
+     Debouncing/throttling
+     video streaming
+     configurable UI
+     Preview
+
+
+** Iteration in React
+atob is used for HTML entryption
+Dash audio player
+
+
+Streaming:
+
+Server sends 206 status which means partial content
+FS is used to create a stream of video by making a file stream
+client sends the range in headers, what part of video is required to send
+
+app.get("/video", function(req,res){
+  const range = req.headers.range; // 3200-
+  if(!range) res.status(400).send("Range required");
+  const videoSize=fs.statSync(<filename>);
+  const chunk_size = 10**6;
+  const start =  range.getSize();
+  const end=Math.min(start+chunk_size,videoSize)
+  const headers = {
+    "CONTENT-RANGE":`bytes ${start}-${end}/${videoSize}`
+    "Accept-Ranges":"bytes",
+    "Content-length":,
+    "content-type":"MP/4"
+  }
+  res.writeHead(206,headers);
+  const videoStream - fs.createReadStream(videPath, {start,end});
+  videoStream.pipe(res);
+})

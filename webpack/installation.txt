@@ -1,0 +1,24 @@
+npm init
+
+npm i react react-dom
+
+// devDependencies
+npm i --save-dev webpack webpack-dev-server webpack-cli
+npm i --save-dev babel-core babel-loader babel-preset-env babel-preset-react html-webpack-plugin
+
+// Usage
+webpack: compile and bundle all files
+webpack-dev-server: for live reloading
+webpack-cli: for running webpack commands like build
+babel-core: transpile ES6 JS to browser compatible version
+babel-loader: compile jsx
+babel-preset-env: it is used to compile any JS version to ES5
+babel-preset-react: 
+html-webpack-plugin: generate build html file, 
+                     simiplify creation of HTML files to serve bundles
+
+// inside package.json
+"scrips":{
+  "start":"webpack-dev-server --mode development --open --hot",
+  "build":"webpack --mode production"
+}

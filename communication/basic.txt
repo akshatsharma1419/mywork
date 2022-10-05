@@ -1,0 +1,29 @@
+Long Polling
+HTTP
+  PROS:
+    Easy to implement
+  CONS:
+    Latency issues.
+    Traffic overhead
+    Connections overhead
+
+Web sockets
+  TCP
+  PROS:
+    Bidirectional
+
+  Cons:
+    Keeping a connection is expensive
+    Does not support HTTP2
+    Hard to load balance
+    Can be problematic with firewalls and proxies filtering TCP
+
+
+Server Sent Events
+  HTTP2
+  PROS:
+    Easy to load balance
+    Resource Effecient (Don't waste device resources)
+  CONS:
+    Unidirectional
+    It has only text data

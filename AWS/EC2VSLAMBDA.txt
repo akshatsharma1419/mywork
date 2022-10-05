@@ -1,0 +1,19 @@
+1st SQS, 2nd S3, 3rd EC2- Product of AWS
+
+EC2-
+Elastic Cloud Computes, 2006. 3rd product of AWS.
+   Easy to scale on demand, downscale.
+   Create backend services
+   We rent EC2, so we pay monthly/yearly
+
+  Process for Auto scaling- Load Balancers -> Target groups -> Auto scaling Groups -> EC2
+
+Lambda- Serverless service
+   Less flexibility
+   No maintainance
+   We can only select memory 128 MB - 2056 MB
+   We pay by invocations, duration and memory
+We cannot use type of servers we want like in EC2, CPU, GPU.
+
+
+We can use an API Gateway to point to lambda function, to make it work as an API endpoint

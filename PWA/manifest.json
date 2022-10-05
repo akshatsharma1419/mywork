@@ -1,0 +1,15 @@
+{
+  "short_name": "My WebApp",
+  "name": "My PWA WebApp",
+  "icons": [
+    {
+      "src": "<path to image>",
+      "type": "images/png",
+      "sizes": "1024*1024"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "",
+  "background_color": ""
+}

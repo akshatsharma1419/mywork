@@ -1,0 +1,10 @@
+Progress Web  (Web Application + Additional Power)
+  - Responsive
+  - Work in offline mode
+  - Look like a native mobile App
+  - Push notification
+  - Update to date in background
+  - Can use GPS and access hardware component(camera, audio)
+
+Service Worker is a script that runs in the background of a browser
+

@@ -1,0 +1,17 @@
+Load balancers are servers that forward internet traffic to multiple servers(EC2) downstream.
+They do health checks to instance before redirecting the request so that users don't see error
+Expose asingle point of access to application
+It can also provide SSL termination(HTTPS) to websites
+Enforce stikiness
+High availability across multiple zones  
+Seperate public and private traffic
+
+An ELB is a managed load balancer, AWS takes care of updates, maintainance, availability
+Integrated with lot of AWS services.
+
+3 types:
+Classic load balancer
+Application Load balancer (Layer 7 HTTP, HTTPs, Websockets traffic)
+Network load balancer (Layer 4 TCP traffic)
+
+user ---> Application Load Balancer  --> Target Groups, EC2 instances, Health Checks

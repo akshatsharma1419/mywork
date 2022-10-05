@@ -1,0 +1,122 @@
+Sass- Syntactically Awesome Stylesheets
+CSS Preprocessor/Extension
+Let's you use features that do not exist in CSS
+Sass (.scss) files are complied to regular CSS
+Browser doesn't understand SASS, so it needs to be complied to CSS
+
+$ can be used to create a variable
+CSS also have variables, but SCSS is easier to write than CSS custom properties.
+You can nest elements in SASS to apply style.
+Below styles will only be applied to ul, a and li inside nav
+nav{
+  ul{ list-style-type:none}
+  li{display:inline-block}
+  a{
+    display:block,
+    text-decoration:none
+  }
+}
+
+------------------------------
+Modules- We can break SCSS files into seperate files, and use them in a main files
+_base.scss  <-- <File Name> we have used _ so that it is ignoed while compilation
+$font-style: sans-serif;
+$primary-color:"red";
+body{
+  font: $font-style;
+}
+
+// styles.scss
+@use 'base';
+.inverse{
+  background-color:base.$primary-color;
+}
+
+--------------------------------------------
+Functions & mixins- It allows us to write blocks of css, which we can use anywhere
+Functions return something, with mixin we just place something.
+With functions we do not need to use include.
+
+@mixin transform($property){
+  --webkit-transform:$property;
+  --ms-transform:$property;
+  transform:$property;
+}
+
+.box {@include transform(rotate(30deg));}
+
+// set color based on background color   ***VVVIMP****
+@function set-text-color($color){
+  @if(lightness($color)>70){
+    @return black;
+  }
+  @else{
+    @return white;
+  }
+}
+
+btn{
+  color: set-text-color($primary-color);
+}
+
+
+-----------------------------------------------
+Inheritance
+$message-style{
+  border:1px solid blue;
+  color:white;
+}
+
+.success{
+  @extend $message-style;
+  border-color:green;
+}
+
+.failed{
+  @extend $message-style;
+  border-color:red;
+}
+
+-------------------------------------
+Operators- We can use Operators
+
+We can also have conditions
+
+@mixin triangle($size, $direction){
+  border-color:transparent;
+  border-width:$size;
+  border-style:solid;
+
+  @if $direction == up{
+  border-top-color:"red";
+  } @else if $direction == "down"{
+    border-bottom-color:"yellow";
+  }
+}
+
+.next{
+  @include triangle(10px, top)
+}
+
+
+------------------------------------------------
+Compiling with npm or there is a VS code plugin
+
+npm i sass
+sass --watch scss/styles.scss  css/styles.css
+So in above command sass will be compiled to css file
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

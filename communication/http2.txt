@@ -1,0 +1,23 @@
+HTTP/2
+   Respond with more data
+   Reduce latency by enabling full request and response multiplexing
+   Fast, effecient and secure
+
+How does it work?
+A single TCP connection can contain multiple requests(Multiplexing)
+Each request has a stream id.
+It allows compressing.
+HTTP/2 with push:
+  Make one get request, server send multiple responses for a single request.
+
+  Pros:
+    Multiplexing over single connection
+    Compression(Header and data)
+    Server push
+    Secure by default
+    Protocol negotiation during TLS (ALPN- application layer protocol negotiation)
+  Cons:
+     Server push can be abused when configured incorrectly.
+     Client might have cached some data, and push event might send lot of unnecessary data
+     Need to be careful if load balancers/browser support HTTP2
+

@@ -1,0 +1,20 @@
+.add-button {
+  background-color: cornflowerblue;
+  border-radius: 0.8rem;
+  padding: 10px;
+  color: white;
+  border: unset;
+  font-weight: bold;
+}
+
+main {
+  margin: 0 auto;
+}
+
+input[type="text"] {
+  width: 30%;
+  padding: 6px;
+  border: 2px solid cornflowerblue;
+  border-radius: 1rem;
+  height: 15px;
+}

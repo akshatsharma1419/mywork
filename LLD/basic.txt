@@ -1,0 +1,17 @@
+For infinite scroll-
+We can use sentinel which will be hidden, and will work as a point 
+to make call to search for more results.
+We create a IntersectionObserver which takes in a callback which is called
+when sentinel is reached.
+
+var intersectionObserver = new IntersectionObserver(callbackFn);
+
+Suppose our first API call gives response after second API call
+So we can use AbortController here
+
+const controller = new AbortController();
+
+fetch(url,{signal:controller.signal})
+controller.abort();
+
+We can add a threshold(0-1) to check if 0-1% of the sentinal is reached   

@@ -1,0 +1,12 @@
+<article>,
+<aside>,
+<details>,
+<figure>,
+<footer>,
+<header>,
+<main>,
+<mark>,
+<nav>,
+<section>,
+<summary>,
+<time>

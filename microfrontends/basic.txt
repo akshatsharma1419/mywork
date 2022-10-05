@@ -1,0 +1,26 @@
+MFEs divide a monolithic app into multiple, smaller apps.
+Each smaller app is responsible for distinct feature of the product
+
+Pros:
+    In MFE, each FE behaves like a seperate single page application with no communication between each other.
+    FEs get data from APIs.
+    Each FE developments can be assigned for development to different teams with no dependancy.
+
+Implementation:
+   Integration: How we are going to assemble together and access different MFEs
+     -  Build-time Integration(Compile-Time Integration)
+           Before container gets loaded in the browser, it gets access to all the source code.
+           Publish apps as an npm package, main app installs packages. Build is generated from main app which has all code.
+           Pros: Easy to setup and understand
+           Cons: Main app needs to be re-deployed everytime a MFE app changes, MFE is tightly coupled with the main app.
+
+     -  Run-Time Integration(Client-Side Integration)
+           After container gets loaded in the browser, it gets access to all the source code
+           MFE app is deployed at a static url which has same base url as main app.
+           When user navigates to main app, main app fetches data from the static url and executes it.
+           Pros: MFE apps can be deployed independently, different versions of MFE can be deployed and main app can decide which one to use.
+           Cons: Tooling+setup is complicated.
+
+           Webpack Module federation can be used to integrate with Run-Time Integration.
+
+     -  Server Integration

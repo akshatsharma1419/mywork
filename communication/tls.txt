@@ -1,0 +1,4 @@
+Transport layer security
+Protocol for securing communication between client and server
+Used in HTTP/2
+

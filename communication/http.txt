@@ -1,0 +1,29 @@
+HTTP: 
+    Hyper text transfer protocol
+    Communication between web servers and clients
+    HTTP is stateless, every request is completely independent
+    Local storage, cookies, session can be used
+
+    HTTPS- Hyper text transfer protocol secure
+    Data sent is encrypted
+    SSL/TLS
+    Install certificate on web host
+
+    Methods:
+    GET- Retrives data from server, or can also be used to send data but it will be appended to url
+    POST- Submit data to server
+    PUT- Update data already on server, if not present create the resource, whole body is sent in request
+    PATCH- Update resource, change only few things which needs to be updated.
+    DELETE- delete data from server
+
+    Codes:
+    1xx: Request received/processing
+    2xx: Successfully received, understood and accepted
+    3xx: Further action must be taken/redirect
+    4xx: Request does not have what it needs
+    5xx: Server failed to fulfil an apparent valid request
+
+How HTTP works:
+All requests goes into a TCP connection,
+you make a request. You get response. 
+TCP connection is busy no new requests can be made

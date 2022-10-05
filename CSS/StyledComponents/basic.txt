@@ -1,0 +1,115 @@
+npm i styled-components
+
+Create a folder components/styles
+Create a file Container.styled.js
+
+Styles can be applied to html elements like div, nav, button, img
+
+import styled from 'styled-components';
+
+export const Container = styled.div`
+  width: 100px;
+  padding:10px;
+  margin:0 auto;
+`
+
+// Where to use the created component
+import {Container} from './components/styles/Container.styled';
+<Container>
+  Hello
+</Container>
+-----------------
+You can nest styles to apply on a specific element:
+
+export const Container = styled.div`
+  width: 100px;
+  padding:10px;
+  margin:0 auto;
+  h1{
+    color:red;
+  }
+
+  // Pseudo classes can also be used, & is used to identify element
+  &:hover{
+    background-color:black;
+  }
+`
+
+// Where to use the created component
+import {Container} from './components/styles/Container.styled';
+<Container>
+  <h1>Hello<h1>
+</Container>
+
+----------------------------------------
+passing props
+
+export const Container = styled.div`
+  width: 100px;
+  padding:10px;
+  margin:0 auto;
+  background-color: ${(props)=>props.bg}
+`
+
+
+<Container bg="yellow">
+  <h1>Hello<h1>
+</Container>
+
+---------------------------------
+Themes- You can add styles at global level, and can be changed from a single place
+It it t0 root element (Like App)
+
+import {ThemeProvider} from 'styled-components';
+
+const theme = {
+  color:{
+    header: 'red',
+    body:'yellow',
+    footer:'pink'
+  }
+}
+
+function App(){
+  return (
+    <ThemeProvider theme>
+      // Other components
+    </ThemeProvider>
+  );
+}
+
+Now we can use it in any components
+
+export const Container = styled.div`
+  width: 100px;
+  padding:10px;
+  margin:0 auto;
+  background-color: ${(theme)=>theme.colors.header}
+  `
+-------------------------------
+You can also create global styles
+import {createGlobalStyle} from 'styled-components';
+
+const GlobalStyles = createGlobalStyle`
+   *{
+    box-sizing:border-box;
+   }
+
+   body{
+    background-color:red;
+   }
+
+   p{
+    font-size:20px;
+   }
+`
+
+function App(){
+  return (
+    <ThemeProvider theme>
+      <GlobalStyles />
+      // Other components
+    </ThemeProvider>
+  );
+}
+

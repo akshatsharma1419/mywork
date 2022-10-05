@@ -1,0 +1,11 @@
+First create a github account.
+Copy/Paste from github how to get started(Like git commands to add repo in local).
+npm init  (Give a name to your package)
+
+Then write code, and to test run npm link
+Go to a different folder to test your package, run npm link <package-name> (It will locally install your package)
+
+Login to npm using creds(Verify your email)
+npm login
+npm publish
+

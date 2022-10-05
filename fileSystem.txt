@@ -1,0 +1,40 @@
+FS is async
+
+Data is converted to buffer, so we have to either specify encoding of convert it to string.
+
+fs.readFile("<path>", "utf8", (err,data)=>{
+  if (err) throw err;
+  console.log(data);
+})
+
+// Catching error
+
+process.on('uncaughtException',err=>{
+  console.error(err);
+  process.exit(1);
+});
+
+Path module to specify path of file
+path.join(__dirname, "folderName", 'filename');
+
+// Writing to file
+fs.writeFile(path.join(__dirname, "folderName", 'New filename'), "Content we want to write in file", (err)=>{
+  console.log("Write complpete");
+})
+
+// Append to file
+fs.appendFile(path.join(__dirname, "folderName", 'filename'), "Content we want to write in file", (err)=>{
+  console.log("Write complpete");
+})
+
+// Rename file
+fs.rename(path.join(__dirname, "folderName", 'filename'), path.join(__dirname, "folderName", 'New filename'),(err)=>{
+  if(err) throw err;
+})
+
+// Create blob and download client side
+const blob1 = new Blob([<can contain strings>],{type:"text/plain"});
+We create a link
+<a download="fileNameAfterDownLoad.txt"/>
+Using JS add Href to anchor tag
+a.href = URL.createObjectURL(blob1);

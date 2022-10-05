@@ -1,0 +1,66 @@
+Client side rendering:
+   Flow
+   -> User request webside 
+   -> Server sends HTML file with JS links
+   -> Browser downloads HTML, CSS and JS
+   -> Browser excutes framework or library
+   -> Browser loads the website
+
+   Pros
+     - Fast rendering after initial load
+     - Good for web apps with lots of logic
+     - A lot of JS frameworks/libraries supporting CSR
+   Cons
+     - initial load may take time
+     - Low seo
+   Usage
+     - If application has lots of dynamic data
+     - If app has very complex UI
+     - If app is focued on bigger no of users
+     - If app needs auth to be accessed
+     - If app does not have lot of content used for SEO
+
+Server Side Rendering(Ready files are sent from server)
+   Flow
+   -> User requests website
+   -> Server created ready HTML
+   -> Browser renders HTML, but it's not interactive
+   -> Browser downloads JS
+   -> Browser excutes JS
+   -> Website is fully interactive
+   Pros
+    - Search engine bots can craw for a better SEO
+    - Initial loading is faster
+   Cons
+    - Lots of server requests
+    - Full page reloads
+    - slow rendering when application has lot of interactivity
+   Usage
+    - If app has more static content
+    - If amount of users is not large
+  
+Pre-rendering
+   Flow
+   -> User requests a website
+   -> Server sends static HTML file with JS resources
+   -> Browser renders HTML and downloads JS
+   -> user see the static page and not interactive
+   -> user is redirected to right file
+   -> user is fully interactive
+   Pros
+    - Better user experience for initial load
+    - Better SEO
+    - Less requests to server with SSR
+   Cons
+    - Need to wait for interactivity
+    - Need to provide user friendly design for first load
+   Usage
+    - If app has a UI with contents used for SEO
+    - If part of app iss available without auth from user
+    - If your app has more static content on first page
+
+--------------------------------------
+Web Vitals
+  - Loading
+  - Interactivity
+  - Stability

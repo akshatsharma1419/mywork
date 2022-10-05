@@ -1,0 +1,86 @@
+It is a managed serverless NoSQL database optimized for performance at scale
+High availability, fault tolerant and durable.
+Data is copied accross multiple nodes, so that if one node goes down, other nodes act as primary
+Ideal for applications with known access patterns
+Access through Apis/ORM and authorized through IAM
+Integrated well with other AWS services
+cost effective usage based payment model
+
+Tables are collection of items
+items are collection of key/value pairs
+Primary key- Partation key + sort key(creation time)
+or Primary key can be just partation key
+We can also use Global Secondary Index to query for a particular column
+
+SQL
+Structure: Tables, Constraints(a particular column has specified type), Relations
+Storage: Concentrated
+Scale: Vertical Horizontal(Master & Replica)
+Access: Raw SQL
+
+- Pros:
+    Data consistency
+- Cons:
+    Hard to scale vertically
+    resource intensive
+When to use- Access pattern not defined, flexible queries, relational queries, enforce field constraints
+
+NoSQL
+Structure: table, document, graph
+Storage: hashing input
+Scale: Easily scalable
+Access: Rest API, storage specific query
+- Pros:
+    Can be scaled horizontally as well as vertically
+    stores key value pairs can be easily retrived(as keys are hashed)
+    Uses a hash function to identify the primary key that falls under a particular range based on that data is stored in case of multiple instances
+    Having multiple instances is known as partation.
+    It is schemaless
+- Cons:
+    We can only find data based on primary key(which is expensive)
+    eventually consistent
+When to use- Acess pattern defined, primary key known, data model fits, high performance no latency
+
+------------------------------------------------------------------
+
+Google Maps Javascript API
+Google Geocode Api
+Distance Matrix Api
+Direction API
+Places API
+
+const mapOptions = {
+    center:{lat:100,lng:200},
+    zoom:7,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+}
+
+const map = new google.maps.Map(<el-to-insert-the-map>, mapOptions)
+
+const directionsService = new google.maps.DirectionsService();
+
+const directionDisplay = new google.maps.DirectionsRenderer();
+
+directionDisplay.setMap(map);
+
+function calcRoute(){
+    // create request
+    var request = {
+        origin: <el-of-input>.value,
+        destination: <el-of-input>.value,
+        travelMode:google.maps.TravelMode.DRIVING,
+        unitSystem: google.maps.UnitSystem.IMPERIAL
+    }
+
+    // Pass request to root method
+    directionsService.route(request, (result,status)=>{
+        if(status==google.maps.DirectionsStatus.Ok){
+           // Use result to display output
+           directionDisplay.setDirections(result);
+        }
+    })
+}
+
+
+
+

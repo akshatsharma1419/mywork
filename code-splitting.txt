@@ -1,0 +1,30 @@
+const Component1 = React.lazy(()=>import("./Table"));
+
+const Home = () =>{
+  return (
+    <div>
+    <Suspense fallback={<div>Loading</div>}>
+      <Component1>
+    <Suspense>
+    </div>)
+}
+
+const Home2 = () =>{
+  return (
+    <div>
+    <ErrorBoundary FallbackComponent={ErrorFallback} onReset={()=>{}}>
+      <Suspense fallback={<div>Loading</div>}>
+        <Component1>
+      <Suspense>
+    </ErrorBoundary>
+    </div>)
+}
+
+
+function ErrorFallback({error, resetErrorBoundary}){
+  return (
+    <>
+    <p>{error.message}</p>
+    <button onClick={resetErrorBoundary}>Try again</button>
+    </>)
+}

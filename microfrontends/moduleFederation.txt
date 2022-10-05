@@ -1,0 +1,79 @@
+Designate one app as the Host(Main app) and one as Remote(Other standalone MFE apps)
+In Remote decide which modules(files) you want to make available to other projects
+Set up Module Federation Plugin to expose those files
+In Host decide which files you want to get from Remote
+Setup Module Federation plugin to fetch those files
+In Host, refactor the entry point to load asynchronously
+In Host, import whatever files you need from remote.
+
+----------------------------------------------------------------------------
+Setting up plugin ModuleFederation plugin in Remote MFE apps
+
+const HTMLWebpackPlugin = require('html-webpack-plugin');
+const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
+
+module.exports = {
+  mode:"development",
+  entry:"./index.js",
+  output: {
+    path: path.join(__dirname,"/dist"),
+    filename:"bundle.js"
+  }
+  plugins:[new ModuleFederationPlugin(
+           {name:"<name>",
+            filename: "remoteEntry.js",
+            exposes:{
+              './nameIndex':'./src/index.js'
+            }
+           }),
+           new HTMLWebpackPlugin({template:"./src/index.html"})],
+  devServer:{
+    port:8081
+  },
+}
+
+-----------------------------------------------------------------------------
+Setting up plugin ModuleFederation plugin in HOST app
+
+const HTMLWebpackPlugin = require('html-webpack-plugin');
+const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
+
+module.exports = {
+  mode:"development",
+  devServer:{
+    port:8080
+  },
+  entry:"./src/index.js",
+  output: {
+    path: path.join(__dirname,"/dist");
+    filename:"bundle.js"
+  }
+  plugins:[
+    new ModuleFederationPlugin({
+      name:"<name>",
+      remotes:{
+        <name-of-host>:"<name>@url/filename"
+      }
+    }),
+    new HTMLWebpackPlugin({template:"./index.html"})]
+}
+
+// refactor the entry point to load asynchronously
+Rename index.js to bootstrap.js
+In bootstrap.js:
+import '<name-of-remote>/nameIndex';
+
+Inside index.js:
+import('./bootstrap');    --> Loading async, to make know webpack to get the JS files from remote
+
+
+-----------------------------------------------------------------------------------------------
+Sharing dependencies 
+Main app fetches MFE files, 
+It notices some apps has similar dependencies installed.
+Main app can choose to load one copy from any of the MFE
+Single copy is made available to all the MFE apps.
+
+For Implementing:
+Inside ModuleFederationPlugin add one more config in all the MFE using similar dependencies
+shared:['react-router-dom']

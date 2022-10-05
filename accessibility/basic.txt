@@ -1,0 +1,62 @@
+4 Caterogies of disablities- 
+  - visual: color blindness, actual blindness
+      Having text over images or in images, font sizes, semantic HTML(For screen readers), alt in images
+      Having a dark background color for text when it has a light color background
+      Not just focus on colors use text and icons, any important info is not based on colors
+      audio descriptions, like telling about actions what is happing in video
+  - auditory: hearing
+      Having closed captions or subtitles on videos
+  - motor: people who are not habituated using mouse, or do not have hand
+      Keyboard navigation
+      Having bigger touch targets like button
+      Avoid timed actions
+  - cognitive: Text density
+      Having a lot of stuffs can make it difficult to recognize new stuffs added.
+      Having controls on video and audio, don't start a video/audio with loud noise when user just opens a website.
+      Having animations for user who only want it, not for one who don't want it.
+
+
+ARIA- Accessible rich internet applications
+Set of rules, states or properties that we can apply to non-semantic HTML to make them work a bit more like semantic elements
+
+Screen readers (Voiceover)
+We can use Chrome plugin ChromeVox Classic Extension
+To enable and disable- Shift+Alt+A+A
+
+Screen readers voiceover will not be able to call out hidden content on a button even after we open it.
+Solution:
+<li>
+  <button aria-expanded="false" aria-controls="sect1" id="btn1">Click to open below content</button>
+  <p id="sect1" role="region" aria-labelled-by="btn1">some text here. Hidden, will be displayed when user clicks on above button</p>
+</li>
+
+Use javascript to change the attribute aria-expanded to true when button clicked and vice versa
+
+WCAG Principles:
+   Perveivable: People must be able to find your content,
+                Text alternatives(Like having audio for captcha), 
+                Time-based media (Having audio for what action is happening in video)
+                Adaptable- Making it reponsive on all screen sizes, 
+                distingushable- Making text content readable.
+   Operable: People must be able to use your website
+             Keyboard Accessible
+             Enough Time: Pause, Start, Replay a video. ie controls should be available
+             Seizures and physical reactions
+             Navigate: People can navigate the website and understand where they are
+             Input Modalities: Our webiste should also be accessible by other devices except keyboard
+   Understandable: Context is readable and easy to understand
+        Readable, using simple language, avoid jargon when possible
+        Predictable, web pages are Predictable in how they appear and operate
+        Input assistance, like in case of expiration date of card details we can specify the format required. MM/YYYY
+   Robust: your webiste must work with different technologies
+       Compatible, build websites that work with current and future assistive technology
+
+
+
+Browser also creates an accessibility tree when DOM is created.
+
+Properties in accessibility tree
+role
+name
+state
+value

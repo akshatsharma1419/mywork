@@ -1,0 +1,14 @@
+AWS CloudFront is a web service that speeds up distribution of your static and dynamic web content to end user.
+
+Routing
+Edge Locations
+More Availability
+
+
+Accelerate static website content delivery
+Serve one demand or live streaming video.
+It helps in caching to improve performance.
+It allows us to have HTTPS on our connection.
+
+Browser -> Route53 -> S3
+Browser -> Route53 -> CloudFront -> S3

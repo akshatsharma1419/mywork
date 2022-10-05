@@ -1,0 +1,22 @@
+Transmission control protocol
+It makes sure that every packet is transferred from server to clint without any loss in same order as sent
+
+TCP is connected oriented
+state memory
+byte system
+reliable
+error free
+handshake
+flow control
+relatively slow
+ordered data delivery
+
+UDP is connectionless
+stateless
+packet/datagram
+lossy
+error packets discarded
+no handshake
+no flow control 
+relatively fast
+no sequence guarantee

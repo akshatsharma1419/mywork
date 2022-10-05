@@ -1,0 +1,6 @@
+Route53 is a managed downscale
+DNS is a collection of rules and records which helps clients understand how to reach a server through URLs
+A: URL to Ipv4
+AAAA: URL to Ipv6
+CNAME: URL to URL
+Alias: URL to AWS resource

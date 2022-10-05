@@ -1,0 +1,59 @@
+Functional Requirements:
+   Templates to start
+   Choose language, Good language support.
+   Preview in real time
+   Edit code in place
+   Debugging
+   Add files/remove files, file explorer
+   Console capabilities
+   Link to github, so we can commit to repository
+   Login access.
+   Pair programming
+   Support for deploying- Netlify
+   Add/ Download external package
+
+Non Functional:
+   Fast real time updates
+   Low latency
+   Latest tech
+   Auth
+   Theme
+   Drag and Drop
+   Availability on wide range of devices
+   Accessibility
+   Offline Support
+   securing against cross scripting
+
+Changes done in the code sandbox is put into iframe for Preview
+
+
+Support for multiple file types
+File/filder creation and deletion, rename
+Drag and drop of files
+Keyboard shortcuts
+
+Tech Choices
+Use an existing code library, Like Monaco/code mirror
+React
+Realtime
+  Browser Apis, Keyboard actions(Ctrl + S)
+  web worker can be used to complilation
+For storing data we can use indexDB
+  user code will also be stored in indexedDB
+  output of webworker code can be stored
+  IDB and webworks stays there per domain, so even if we open app in new tab still we can see Changes
+Sw can be used for caching, static assets, js bundles
+
+
+Implementation
+For console- we can use console-feed
+For debugging- we can use react-devtools-inline
+URL shortning can be used to identify the sandbox, instaed of showing the entire path of files.
+
+
+
+
+
+
+
+

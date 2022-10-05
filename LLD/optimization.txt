@@ -1,0 +1,123 @@
+Using sprite- background: url('img_navsprites.gif') -47px 0;
+In above we specify the image from left and top in the main image
+
+Network optimization
+   - Lazy Loading
+       We load some of the content lazily, which is not visible in viewport.
+       We can use loading attribute for html tags. Eg: <img src="" loading="lazy|eager" />
+       We can also set priority for fetching. <img src="" loading="lazy|eager" fetchpriority="low|high" />
+
+       Using IntersectionObserver:
+         We add a sentinal which is when reached we load more items. IntersectionObserver watches
+         for sentinal when it is reached in viewport a callback is called. 
+        
+       content-visibility: auto;
+          Anhything which is not visible in viewport it renders lazily
+       
+       Serving critical CSS- Load only those CSS which is instantly required, rest are lazily loaded.
+          Eg: <link rel="stylesheet" media="print" onload="this.media='all'" /> (this will load css with less priority)
+
+       Reource Hinting -> we give hint to browser, so browser can make some network call on priority basis.
+          preload - this can be used to load the CSS/JS as soon as page starts rendering, and is executed. Eg <link rel="preload" href="<path>" as="script|style" >
+          prefetch - we can fetch the CSS/JS, but we don't want to execute that. 
+          preconnect - this can be used to do a handshake with domain, so that for other requests handshake is not required. <link rel="preconnect" href="<domain>" />
+          dns-prefetch - same as preconnect
+          prerender - can be used to render content, and use when required
+          modulepreload - can be used to load module from before. <link rel="modulepreload" href="./Header.js" />
+
+
+   - Loading JS in async:
+       Normal: HTML is parsing, when script is encountered parsing stops script is downloaded
+               and executed. After that HTML parsing resumes.
+       Async: HTML is parsing, when script is encountered script downloaded parallely parsing continues
+              once downloaded, parsing stops, script is executed. then parsing resumes.
+       Defer: HTML is parsing, when script is encountered script is downloaded parallely parsing continues
+              scripts are excuted only when parsing is complete.
+   - Caching using service workers
+   - Caching using CDN
+   - CSR, SSR
+   - Compression techniques:
+       Brotli and Gzip
+       We compress the bundles, browser knows how to uncompress it.
+   - Layout shits ans repaints  (VVIMP)
+       Loading                       -> scripting  -> Rendering              -> Painting
+       We request page                  Execute JS    Merge DOM and CSSOM      Build layout tree
+       Get html                                       into render tree         Build paint tree (Paint)
+       Get CSS                                        (Layout)                 Turn layers info into pixels on screen (Composting)(Costly)
+       Get JS
+       Parsing done (Line 41 to 45 Parsing)
+       DOM created (known as DOMContentLoaded)
+       Parse CSS Build CSSOM (Style Calculation)
+
+       DOM -> CSSOM -> Render Tree -> Layout Tree(Where everything goes on the page) -> Paint Tree(paint pixels on actual screen)
+
+       JS Style Layout Paint Composite  (If we have any style change from CSS/JS which change dimension, it has to go through all steps) Eg height, width, scroll
+       JS Style Paint Composite (Layout shift is not there) Eg background-color, shadows, color
+       JS Style Composite (transform opacity)
+
+-----------------------------------------------------------------------------------
+Assets optimization
+    - Images
+       Compression
+       Lazy Loading
+       Progressive Enhancement - using picture
+       Client Http Hinting
+       Responsive Images - srcset
+       Adaptive Images- load images/video based on connectivity
+
+    - Videos
+       Progressive enhancement: video element with multiple source
+       Replace gifs with Videos
+       Responsive Poster Images
+       Steaming- send small chunks which is clubbed and video is played
+       No audio
+       Preload can be added to video element. none|auto|metadata
+    - Fonts
+         display decorator
+         FLOUT with
+         class
+            Data URI
+            Asyc load css
+
+    - CSS
+        Lazy Loading
+        Critical CSS rendering
+    - JS
+        Web workers
+        defer/async
+
+
+
+
+Steps involved in creation of DOM
+  Browser downloads and parse HTML
+  HTML Tags converted to tokens with start and end tag
+  Then tokens are converted into nodes
+  nodes construct the DOM
+
+Steps involved in creation of CSSOM
+  Browser receive CSS
+  Identify correct tokens
+  Parser converts tokens to nodes
+  Child nodes inherit properties from parent
+  Partial CSSOM tree is not created, once parsing is done for all CSS then CSSOM is created
+
+Steps involved in render tree
+  It only captures visible content
+  Merging of DOM & CSSOM
+
+Layout (Calculating positions and dimensions)
+  Where and how elements are positioned on the screen
+  We call layout anytime we update render tree
+
+Paint(Putting pixels on screen)
+
+Viewport:
+<meta name="viewport" content="width=device-width">
+Default viewport width is 980 px
+If we do not specify width, browser considers default viewport
+ 
+
+
+
+

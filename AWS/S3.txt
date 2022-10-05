@@ -1,0 +1,24 @@
+S3-  (Launched in 2006 as AWS's second ever service)
+  Simple storage solution
+  Object storage(img, txt, blobs, etc) in folder structure
+  Cost effective
+  Built redendancy with 99.99% (S3 is replicate our content across 3 availability zone)
+
+Limitations: 5 TB max size
+
+URL: http://s3.amazonaws.com/<BUCKET_NAME>/<OBJECT_NAME>
+
+S3 storage class- It allows you to reduce costs, but with certain sacrifices
+Standard, Intelligent, Infrequent access, Glacier
+We can use lifecycle process
+
+Amazon Athena can be used to query content in S3
+
+Use-
+    Cheap, reliable way to store objects
+    Low latency, high throughput access
+    Can easily be used to host static website
+    Can integrate with SNS, SQS, Lambda
+    Has mechanisms to shift away old data into long term storage for cost reduction
+    Can be used for website hosting, database backups, data processing pipelines
+
